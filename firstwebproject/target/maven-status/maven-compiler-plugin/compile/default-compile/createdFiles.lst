@@ -1,0 +1,4 @@
+com\hb\common\controller\HelloWorldController.class
+com\hb\common\controller\MyViewResolver.class
+com\hb\common\controller\MyService.class
+foo\App.class

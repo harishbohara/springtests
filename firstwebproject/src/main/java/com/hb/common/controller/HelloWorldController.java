@@ -3,19 +3,23 @@ package com.hb.common.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
  
  
 public class HelloWorldController extends AbstractController {
- 
+	
+	@Autowired
+	MyService myService;
+	
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
  
 		ModelAndView model = new ModelAndView("HelloWorldPage");
-		model.addObject("msg", "hello world");
- 
+		model.addObject("msg", "hello world harish - " + myService.name());
+		
 		return model;
 	}
 }
