@@ -78,7 +78,7 @@
 		</plugins>
 	</build>
 
-	<repositories>
+	<repositories> 
 		<repository>
 			<id>org.springframework.maven.milestone</id>
 			<name>Maven Central Compatible Spring Milestone Repository</name>
