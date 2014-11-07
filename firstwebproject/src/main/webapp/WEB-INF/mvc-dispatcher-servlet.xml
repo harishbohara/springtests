@@ -7,13 +7,14 @@
    http://www.springframework.org/schema/context 
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<!-- Ensures that configuration properties are read from a property file
-	<context:property-placeholder location="classpath:application.properties" />
-	-->
+	<!-- Ensures that configuration properties are read from a property file 
+		<context:property-placeholder location="classpath:application.properties" 
+		/> -->
 
-	<bean name="/welcome.htm" class="com.hb.common.controller.HelloWorldController" />
+	<context:component-scan base-package="com.hb.*" />
 
-	<bean id="viewResolver" class="com.hb.common.controller.MyViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/pages/</value>
 		</property>
@@ -22,8 +23,11 @@
 		</property>
 	</bean>
 
-	<context:annotation-config />
-	<context:component-scan base-package="com.hb.common.controller" />
-	<context:component-scan base-package="com.hb.common.controller.security" />
+	<!-- <bean name="/welcome.htm" class="com.hb.common.controller.HelloWorldController" 
+		/> <bean id="viewResolver" class="com.hb.common.controller.MyViewResolver"> 
+		<property name="prefix"> <value>/WEB-INF/pages/</value> </property> <property 
+		name="suffix"> <value>.jsp</value> </property> </bean> <context:annotation-config 
+		/> <context:component-scan base-package="com.hb.common.controller" /> <context:component-scan 
+		base-package="com.hb.common.controller.security" /> -->
 
 </beans>

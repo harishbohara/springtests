@@ -14,8 +14,8 @@ import org.springframework.social.connect.web.ConnectController;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 
-@Configuration
-@EnableSocial
+//@Configuration
+//@EnableSocial
 public class SocialContext implements SocialConfigurer {
 
     public void addConnectionFactories(ConnectionFactoryConfigurer cfConfig, Environment env) {
