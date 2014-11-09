@@ -33,7 +33,7 @@ public class HelloController {
         model.addObject("title", "Spring Security Hello World");
         model.addObject("message", "This is welcome page!");
         model.setViewName("hello");
-
+        /*
         FacebookConnectionFactory connectionFactory = new FacebookConnectionFactory("402617649887268", "0acbe5fb8d3a7b725d4079c78118773c");
         OAuth2Operations oauthOperations = connectionFactory.getOAuthOperations();
         OAuth2Parameters params = new OAuth2Parameters();
@@ -44,6 +44,7 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
         return model;
 
     }

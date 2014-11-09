@@ -1,9 +1,0 @@
-com\hb\common\controller\security\SocialContext.class
-com\hb\common\controller\security\SimpleSocialUserDetailsService.class
-com\hb\common\controller\security\SecurityContext.class
-com\hb\common\controller\HelloWorldController.class
-com\hb\common\controller\security\MySecurityWebApplicationInitializer.class
-com\hb\common\controller\MyViewResolver.class
-com\hb\common\controller\MyService.class
-foo\App.class
-com\hb\common\controller\security\RepositoryUserDetailsService.class
