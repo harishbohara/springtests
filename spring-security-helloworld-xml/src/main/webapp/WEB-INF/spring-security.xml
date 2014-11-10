@@ -13,13 +13,14 @@
 	<context:component-scan base-package="com.mkyong.*" />
 	<context:component-scan base-package="org.springframework.security.web.context" />
 	<context:component-scan base-package="com.hb.model" />
+	<context:component-scan base-package="com.hb.facebook" />
 
 	<http auto-config="true">
 		<intercept-url pattern="/admin**" access="ROLE_USER" />
 		<custom-filter position="PRE_AUTH_FILTER"
 			ref="myRequestHeaderAuthenticationFilter" />
 	</http>
-	
+
 	<beans:bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
@@ -32,7 +33,7 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-	
+
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>
 		<beans:property name="url"
@@ -56,19 +57,13 @@
 				users-by-username-query="select username, password, true from users where username=?"
 				authorities-by-username-query="select username, 'ROLE_USER' from users where username =?  " />
 		</authentication-provider>
-		<!-- 
-		<authentication-provider>
-			<user-service>
-				<user name="mkyong" password="123456" authorities="ROLE_USER" />
-			</user-service>
-		</authentication-provider>
-		 -->
+		<!-- <authentication-provider> <user-service> <user name="mkyong" password="123456" 
+			authorities="ROLE_USER" /> </user-service> </authentication-provider> -->
 		<!-- <authentication-provider ref="preauthAuthProvider" /> -->
 	</authentication-manager>
 
 	<beans:bean id="securityContextPersistenceFilter"
 		class="org.springframework.security.web.context.MySecurityContextPersistenceFilter" />
-
 	<beans:bean id="authenticationFilter"
 		class="org.springframework.security.web.context.UsernamePasswordAuthenticationFilter">
 		<beans:property name="authenticationManager" ref="authenticationManager" />
